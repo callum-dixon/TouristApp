@@ -1,0 +1,781 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Lincoln Tourism</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+            <!--SOME APPLE SEETINGS-->
+            <meta name="apple-mobile-web-app-capable" content="yes">
+                <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+                    <!--You need this although you do not need a physical reference as build will inject it in-->
+                    <script type="text/javascript" src="js/cordova.js"></script>
+                    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCYSoP56moZ5ZgMbG7xVprnyiDRSoSbnH4&sensor=false"></script>
+                    <script type="text/javascript" src="js/jquery-2.2.2.min.js"></script>
+                    <script type="text/javascript" src="js/jquery.mobile-1.4.5.min.js"></script>
+                    <script type="text/javascript" src="js/exercisetracker.js"></script>
+                    <link rel="stylesheet" href="css/jquery.mobile-1.4.5.css" />
+                    <link rel="stylesheet" href="css/custom.css" />
+
+
+
+
+    </head>
+    <body>
+
+<!-- Start of Attraction page -->
+<div data-role="page" id="attractions" data-theme='a'>
+    <div data-role="header">
+        <h1>Lincoln Attractions</h1>
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#attractions" data-transition="none" data-icon="info">Attractions</a></li>
+                <li><a href="#food" data-transition="none" data-icon="star">Restaurants</a></li>
+            </ul>
+        </div>
+    </div>
+    <div data-role="content"></div>
+
+    <p align="center">Please select a location for information and directions</p>
+
+    <a href="#cathedral" data-transition="slide"><img src="ASSETS/cathedral.jpg" width="100%" height="auto" alt=""/> </a>
+    <a href="#castle" data-transition="slide"><img src="ASSETS/castle.jpg" width="100%" height="auto"  alt=""/> </a>
+    <a href="#museum" data-transition="slide"><img src="ASSETS/museum.jpg" width="100%" height="auto" alt=""/> </a>
+    <a href="#hartsholme" data-transition="slide"><img src="ASSETS/hartsholme.jpg" width="100%" height="auto" alt=""/> </a>
+
+  </div>
+<!-- /page -->
+
+<!-- Start of the Restaurants page -->
+<div data-role="page" id="food" data-theme='a'>
+
+    <div data-role="header">
+        <h1>Restaurants</h1>
+
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#attractions" data-transition="none" data-icon="info">Attractions</a></li>
+                <li><a href="#food" data-transition="none" data-icon="star">Restaurants</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div data-role="content">
+
+    <p align="center">Please select the day of the week to find deals active in Lincoln on that day</p>
+
+    <a href="#monday" data-transition="slide"><button id="monday_deals_button">Monday</button></a>
+    <a href="#tuesday" data-transition="slide"><button id="tuesday_deals_button">Tuesday</button></a>
+    <a href="#wednesday" data-transition="slide"><button id="wednesday_deals_button">Wednesday</button></a>
+    <a href="#thursday" data-transition="slide"><button id="thursday_deals_button">Thursday</button></a>
+    <a href="#friday" data-transition="slide"><button id="friday_deals_button">Friday</button></a>
+    <a href="#saturday" data-transition="slide"><button id="saturday_deals_button">Saturday</button></a>
+    <a href="#sunday" data-transition="slide"><button id="sunday_deals_button">Sunday</button></a>
+
+
+    </div>
+
+</div><!-- /page -->
+
+<!-- Cathedral page -->
+<div data-role="page" id="cathedral" data-theme='a'>
+
+    <div data-role="header">
+        <h1>Lincoln Cathedral</h1>
+
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#attractions" data-transition="fade" data-icon="arrow-l">Return</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div data-role="content">
+      <table width="100%" border="0">
+        <tr>
+          <td><img src="ASSETS/cathedral.jpg" width="100%" height="auto" alt=""/></td>
+        </tr>
+        <tr>
+          <td><p>Lincoln Cathedral is the Mother Church of the Diocese, the parish church of the County, a place of national heritage and a centre of international pilgrimage. It provides a space for God, a place for worship, praise and private prayer.<br><br>The Cathedral dates from 1072 when William the Conqueror instructed that the bishopric of this, then the largest diocese in England (covering the lands between the river Thames and the Humber), be moved from Dorchester, near Oxford, to Lincoln. The first Norman Bishop of Lincoln, Remigius, had previously been a Benedictine monk and a loyal supporter of William at the Battle of Hastings in 1066.</p></td>
+        </tr>
+        <tr>
+          <td><a href="https://www.google.com/maps/dir/Current+Location/Lincoln+Cathedral,+Minster+Yard,+Lincoln,+UK" onclick="window.open(this.href,'_blank'); return false;"><button id="castle_direction_buttons">Get Directions</button></a></td>
+        </tr>
+      </table>
+    </div>
+
+</div><!-- /page -->
+
+<!-- Castle page -->
+<div data-role="page" id="castle" data-theme='a'>
+
+    <div data-role="header">
+        <h1>Lincoln Castle</h1>
+
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#attractions" data-transition="fade" data-icon="arrow-l">Return</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div data-role="content">
+      <table width="100%" border="0">
+        <tr>
+          <td><img src="ASSETS/castle.jpg" width="100%" height="auto" alt=""/></td>
+        </tr>
+        <tr>
+          <td><p>Lincoln Castle is a major castle constructed in Lincoln, England, during the late 11th century by William the Conqueror on the site of a pre-existing Roman fortress. The castle is unusual in that it has two mottes. It is only one of two such castles in the country, the other being at Lewes in Sussex. Lincoln Castle remained in use as a prison and law court into modern times, and is one of the better preserved castles in England; the Crown Courts continue to this day. <br><br>It is open to the public as a museum. Lincoln Castle remains one of the most impressive Norman castles in the United Kingdom. It is still possible to walk around the immense Norman walls which provide a magnificent view of the castle complex, together with panoramic views of the cathedral, the city, and the surrounding countryside.</p></td>
+        </tr>
+        <tr>
+          <td><a onclick="window.open('https://www.google.com/maps/dir/Current+Location/Lincoln+Castle,+Castle+Hill,+Lincoln,+United+Kingdom', '_system');"><button id="castle_direction_buttons">Get Directions</button></a></td>
+        </tr>
+      </table>
+
+    </div>
+
+</div><!-- /page -->
+
+<!-- Museum page -->
+<div data-role="page" id="museum" data-theme='a'>
+
+    <div data-role="header">
+        <h1>Museum of Lincolnshire Life</h1>
+
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#attractions" data-transition="fade" data-icon="arrow-l">Return</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div data-role="content">
+      <table width="100%" border="0">
+        <tr>
+          <td><img src="ASSETS/museum.jpg" width="100%" height="auto" alt=""/></td>
+        </tr>
+        <tr>
+          <td><p>The Museum of Lincolnshire Life&rsquo;s rich and varied social history collection reflects and celebrates the culture of Lincolnshire and its people from 1750 to the present day. Exhibits illustrate commercial, domestic, agricultural, industrial and community life.</p>
+            <p>As the home to an authentic World War One tank named &ldquo;Daphne&rdquo;, the museum also houses interactive galleries of the Royal Lincolnshire Regiment, which have won prestigious national awards. Perhaps you can find information about family members who served here?</p>
+          <p>The Museum of Lincolnshire Life offers a wide range of services including exhibitions in a community gallery, group quiz sessions and an education program linked to the National Curriculum.</p></td>
+        </tr>
+        <tr>
+          <td><button id="castle_direction_buttons" href="https://www.google.com/maps/dir/Current+Location/Museum+of+Lincolnshire+Life,+Lincoln,+United+Kingdom">Get Directions</button></a></td>
+        </tr>
+      </table>
+    </div>
+
+</div><!-- /page -->
+
+<!-- Hartsholme page -->
+<div data-role="page" id="hartsholme" data-theme='a'>
+
+    <div data-role="header">
+        <h1>Hartsholme Park</h1>
+
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#attractions" data-transition="fade" data-icon="arrow-l">Return</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div data-role="content">
+      <table width="100%" border="0">
+        <tr>
+          <td><img src="ASSETS/hartsholme.jpg" width="100%" height="auto" alt=""/></td>
+        </tr>
+        <tr>
+          <td><p>Hartsholme Country Park is situated in the southwest of Lincoln, adjacent to Swanholme Lakes Local Nature Reserve, approximately three miles from the city centre.<br><br>The site comprises Victorian landscaped gardens, a large reservoir, woodlands and grasslands. Many features, both natural and built, survive from the original landscaping of the 1860s.</p></td>
+        </tr>
+        <tr>
+          <td><a onclick="window.open('https://www.google.com/maps/dir/Current+Location/Hartsholme+Country+Park,+Skellingthorpe+Road,+Lincoln,+United+Kingdom', '_system');"><button id="castle_direction_buttons">Get Directions</button></a></td>
+        </tr>
+      </table>
+    </div>
+
+</div><!-- /page -->
+
+<!-- Monday page -->
+<div data-role="page" id="monday" data-theme='a'>
+
+    <div data-role="header">
+        <h1>Monday Food Deals</h1>
+
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#food" data-transition="fade" data-icon="arrow-l">Return</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div data-role="content">
+      <table width="100%" border="0">
+        <tr>
+          <td><img src="ASSETS/butcher.jpg" width="100%" height="auto" alt=""/></td>
+        </tr>
+        <tr>
+          <td align="center"><strong>Butcher & Beast, Heighington</strong></td>
+        </tr>
+        <tr>
+          <td><p>Monday; Steak Night, 8oz Rump Steak or 14oz Gammon plus a drink for only &pound10.00 5pm start.</p></td>
+        </tr>
+        <tr>
+          <td><img src="ASSETS/crown.png" width="100%" height="auto" alt=""/></td>
+        </tr>
+        <tr>
+          <td align="center"><strong>Crown & Arrows, Lincoln</strong></td>
+        </tr>
+         <tr>
+          <td><p>Monday to Friday; 2 Meals for &pound8.49 from a selected menu.<br>Monday to Friday; Burger & Pint from &pound4.99<br>Monday to Friday until 5pm; Kids Mega Meal Deal, any small meal, chips & drink from the kids menu, for &pound2.99<br>Monday to Friday until 5pm; Golden Years, for the over 60s, 2 courses for &pound4.49<br>Monday to Wednesday; Get a drink for &pound1 when you buy any Big plate special (selected drinks only)</p></td>
+        </tr>
+        <tr>
+          <td><img src="ASSETS/centurion.png" width="100%" height="auto" alt=""/></td>
+        </tr>
+        <tr>
+          <td align="center"><strong>Centurion, North Hykeham</strong></td>
+        </tr>
+        <tr>
+        	<td><p>Monday; Cask Club, Cask Ales &pound2.49 all day</p></td>
+        </tr>
+        <tr>
+          <td><img src="ASSETS/duke.jpg" width="100%" height="auto" alt=""/></td>
+        </tr>
+        <tr>
+          <td align="center"><strong>Duke William, Lincoln</strong></td>
+        </tr>
+        <tr>
+        	<td><p>Monday-Friday; Fixed price lunch deal, two courses &pound11.95, three courses &pound14.95 12pm-5pm (Supliment charge for some menu items).<br>Monday-Thursday evenings; Two main courses from their evening menu & a bottle of house wine &pound29</p></td>
+        </tr>
+        <tr>
+          <td><img src="ASSETS/horse.png" width="100%" height="auto" alt=""/></td>
+        </tr>
+        <tr>
+          <td align="center"><strong>Horse & Groom, Lincoln</strong></td>
+        </tr>
+        <tr>
+       	  <td><p>Monday; Burger Mondays from &pound7.95</p></td>
+        </tr>
+        <tr>
+          <td><img src="ASSETS/green.jpg" width="100%" height="auto" alt=""/></td>
+        </tr>
+        <tr>
+          <td align="center"><strong>Lincoln Green</strong></td>
+        </tr>
+        <tr>
+       	  <td><p>Weekday Lunchtime Special: Mon-Fri 12-2.30; your choice from 5 lighter lunches for just &pound3.99<br>Kids Eat Free: Anytime Mon-Fri & until 6pm Saturday. One child’s meal per full price adult meal.<br>2 for &pound12 on selected Pub Classics.<br>Monday Madness: 20% off all food except the &pound3.99 lunch deal.</p></td>
+        </tr>
+        <tr>
+          <td><img src="ASSETS/lion.jpg" width="100%" height="auto" alt=""/></td>
+        </tr>
+        <tr>
+          <td align="center"><strong>Lion & Snake, Lincoln</strong></td>
+        </tr>
+        <tr>
+       	  <td><p>Monday to Friday; Sandwich and a drink from &pound4.95, served until 3:30pm.<br>Monday to Friday; Beer and a burger, free drink with any burger or hot dog.</p></td>
+        </tr>
+        <tr>
+          <td><img src="ASSETS/magna.jpg" width="100%" height="auto" alt=""/></td>
+        </tr>
+        <tr>
+          <td align="center"><strong>Magna Carta, Lincoln</strong></td>
+        </tr>
+        <tr>
+       	  <td><p>Monday to Friday; 12pm – 5pm Lunch Club: 2 Courses &pound6.99, 3 Courses &pound8.49</p></td>
+        </tr>
+        <tr>
+          <td><img src="ASSETS/prince.jpg" width="100%" height="auto" alt=""/></td>
+        </tr>
+        <tr>
+          <td align="center"><strong>Prince of Wales, Lincoln</strong></td>
+        </tr>
+        <tr>
+       	  <td><p>Monday – Friday; Lunchtime Sandwich and Drink deal; &pound5.95 until 2.30pm</p></td>
+        </tr>
+        <tr>
+          <td><img src="ASSETS/slug.png" width="100%" height="auto" alt=""/></td>
+        </tr>
+        <tr>
+          <td align="center"><strong>Slug & Lettuce, Lincoln</strong></td>
+        </tr>
+        <tr>
+       	  <td><p>Monday; Happy Mondays, 50% off your food bill.</p></td>
+        </tr>
+      </table>
+    </div>
+
+</div><!-- /page -->
+
+<!-- Tuesday page -->
+<div data-role="page" id="tuesday" data-theme='a'>
+
+    <div data-role="header">
+        <h1>Tuesday Food Deals</h1>
+
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#food" data-transition="fade" data-icon="arrow-l">Return</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div data-role="content">
+      <table width="100%" border="0">
+        <tr>
+          <td><img src="ASSETS/crown.png" width="100%" height="auto" alt=""/></td>
+        </tr>
+        <tr>
+          <td align="center"><strong>Crown & Arrows, Lincoln</strong></td>
+        </tr>
+         <tr>
+          <td><p>Monday to Friday; 2 Meals for &pound8.49 from a selected menu.<br>Monday to Friday; Burger & Pint from &pound4.99<br>Monday to Friday until 5pm; Kids Mega Meal Deal, any small meal, chips & drink from the kids menu, for &pound2.99<br>Monday to Friday until 5pm; Golden Years, for the over 60s, 2 courses for &pound4.49<br>Monday to Wednesday; Get a drink for &pound1 when you buy any Big plate special (selected drinks only)</p></td>
+        </tr>
+        <tr>
+          <td><img src="ASSETS/centurion.png" width="100%" height="auto" alt=""/></td>
+        </tr>
+        <tr>
+          <td align="center"><strong>Centurion, North Hykeham</strong></td>
+        </tr>
+        <tr>
+        	<td><p>Tuesday; Burger Night, 5pm until 10pm from &pound5</p></td>
+        </tr>
+        <tr>
+          <td><img src="ASSETS/duke.jpg" width="100%" height="auto" alt=""/></td>
+        </tr>
+        <tr>
+          <td align="center"><strong>Duke William, Lincoln</strong></td>
+        </tr>
+        <tr>
+        	<td><p>Monday-Friday; Fixed price lunch deal, two courses &pound11.95, three courses &pound14.95 12pm-5pm (Supliment charge for some menu items).<br>Monday-Thursday evenings; Two main courses from their evening menu & a bottle of house wine &pound29</p></td>
+        </tr>
+        <tr>
+          <td><img src="ASSETS/horse.png" width="100%" height="auto" alt=""/></td>
+        </tr>
+        <tr>
+          <td align="center"><strong>Horse & Groom, Lincoln</strong></td>
+        </tr>
+        <tr>
+       	  <td><p>Tuesday; Fish & Chips Night, 2 dine for &pound12</p></td>
+        </tr>
+        <tr>
+          <td><img src="ASSETS/green.jpg" width="100%" height="auto" alt=""/></td>
+        </tr>
+        <tr>
+          <td align="center"><strong>Lincoln Green</strong></td>
+        </tr>
+        <tr>
+       	  <td><p>Weekday Lunchtime Special: Mon-Fri 12-2.30; your choice from 5 lighter lunches for just &pound3.99<br>Kids Eat Free: Anytime Mon-Fri & until 6pm Saturday. One child’s meal per full price adult meal.<br>2 for &pound12 on selected Pub Classics.<br>Tuesday: Pie Of The Day &pound4.99.</p></td>
+        </tr>
+        <tr>
+          <td><img src="ASSETS/lion.jpg" width="100%" height="auto" alt=""/></td>
+        </tr>
+        <tr>
+          <td align="center"><strong>Lion & Snake, Lincoln</strong></td>
+        </tr>
+        <tr>
+       	  <td><p>Monday to Friday; Sandwich and a drink from &pound4.95, served until 3:30pm.<br>Monday to Friday; Beer and a burger, free drink with any burger or hot dog.<br>Tuesday; Curry Club, free drink with any curry.</p></td>
+        </tr>
+        <tr>
+          <td><img src="ASSETS/magna.jpg" width="100%" height="auto" alt=""/></td>
+        </tr>
+        <tr>
+          <td align="center"><strong>Magna Carta, Lincoln</strong></td>
+        </tr>
+        <tr>
+       	  <td><p>Monday to Friday; 12pm – 5pm Lunch Club: 2 Courses &pound6.99, 3 Courses &pound8.49</p></td>
+        </tr>
+        <tr>
+          <td><img src="ASSETS/prince.jpg" width="100%" height="auto" alt=""/></td>
+        </tr>
+        <tr>
+          <td align="center"><strong>Prince of Wales, Lincoln</strong></td>
+        </tr>
+        <tr>
+       	  <td><p>Monday – Friday; Lunchtime Sandwich and Drink deal; &pound5.95 until 2.30pm</p></td>
+        </tr>
+        <tr>
+          <td><img src="ASSETS/slug.png" width="100%" height="auto" alt=""/></td>
+        </tr>
+        <tr>
+          <td align="center"><strong>Slug & Lettuce, Lincoln</strong></td>
+        </tr>
+        <tr>
+       	  <td><p>Tuesday; Tikka Tuesdays, 2 for 1 curries</p></td>
+        </tr>
+      </table>
+    </div>
+
+</div><!-- /page -->
+
+<!-- Wednesday page -->
+<div data-role="page" id="wednesday" data-theme='a'>
+
+    <div data-role="header">
+        <h1>Wednesday Food Deals</h1>
+
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#food" data-transition="fade" data-icon="arrow-l">Return</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div data-role="content">
+      <table width="100%" border="0">
+        <tr>
+          <td><img src="ASSETS/crown.png" width="100%" height="auto" alt=""/></td>
+        </tr>
+        <tr>
+          <td align="center"><strong>Crown & Arrows, Lincoln</strong></td>
+        </tr>
+         <tr>
+          <td><p>Monday to Friday; 2 Meals for &pound8.49 from a selected menu.<br>Monday to Friday; Burger & Pint from &pound4.99<br>Monday to Friday until 5pm; Kids Mega Meal Deal, any small meal, chips & drink from the kids menu, for &pound2.99<br>Monday to Friday until 5pm; Golden Years, for the over 60s, 2 courses for &pound4.49<br>Monday to Wednesday; Get a drink for &pound1 when you buy any Big plate special (selected drinks only)<br>Wednesday; Curry & a Pint for &pound4.99</p></td>
+        </tr>
+        <tr>
+          <td><img src="ASSETS/centurion.png" width="100%" height="auto" alt=""/></td>
+        </tr>
+        <tr>
+          <td align="center"><strong>Centurion, North Hykeham</strong></td>
+        </tr>
+        <tr>
+        	<td><p>Wednesday; Sausage Night, 5pm until 10pm &pound5</p></td>
+        </tr>
+        <tr>
+          <td><img src="ASSETS/duke.jpg" width="100%" height="auto" alt=""/></td>
+        </tr>
+        <tr>
+          <td align="center"><strong>Duke William, Lincoln</strong></td>
+        </tr>
+        <tr>
+        	<td><p>Monday-Friday; Fixed price lunch deal, two courses &pound11.95, three courses &pound14.95 12pm-5pm (Supliment charge for some menu items).<br>Monday-Thursday evenings; Two main courses from their evening menu & a bottle of house wine &pound29</p></td>
+        </tr>
+        <tr>
+          <td><img src="ASSETS/horse.png" width="100%" height="auto" alt=""/></td>
+        </tr>
+        <tr>
+          <td align="center"><strong>Horse & Groom, Lincoln</strong></td>
+        </tr>
+        <tr>
+       	  <td><p>Wednesday; Pie & a Pint Night from &pound8.95</p></td>
+        </tr>
+        <tr>
+          <td><img src="ASSETS/green.jpg" width="100%" height="auto" alt=""/></td>
+        </tr>
+        <tr>
+          <td align="center"><strong>Lincoln Green</strong></td>
+        </tr>
+        <tr>
+       	  <td><p>Weekday Lunchtime Special: Mon-Fri 12-2.30; your choice from 5 lighter lunches for just &pound3.99<br>Kids Eat Free: Anytime Mon-Fri & until 6pm Saturday. One child’s meal per full price adult meal.<br>2 for &pound12 on selected Pub Classics.<br>Wednesday: Bargain Burgers &pound4.99 with chips and side salad.</p></td>
+        </tr>
+        <tr>
+          <td><img src="ASSETS/lion.jpg" width="100%" height="auto" alt=""/></td>
+        </tr>
+        <tr>
+          <td align="center"><strong>Lion & Snake, Lincoln</strong></td>
+        </tr>
+        <tr>
+       	  <td><p>Monday to Friday; Sandwich and a drink from &pound4.95, served until 3:30pm.<br>Monday to Friday; Beer and a burger, free drink with any burger or hot dog.<br>Wednesday; 2 for 1 on main course 17.00-20.00</p></td>
+        </tr>
+        <tr>
+          <td><img src="ASSETS/magna.jpg" width="100%" height="auto" alt=""/></td>
+        </tr>
+        <tr>
+          <td align="center"><strong>Magna Carta, Lincoln</strong></td>
+        </tr>
+        <tr>
+       	  <td><p>Monday to Friday; 12pm – 5pm Lunch Club: 2 Courses &pound6.99, 3 Courses &pound8.49<br>Wednesday; Curry Club</p></td>
+        </tr>
+        <tr>
+          <td><img src="ASSETS/prince.jpg" width="100%" height="auto" alt=""/></td>
+        </tr>
+        <tr>
+          <td align="center"><strong>Prince of Wales, Lincoln</strong></td>
+        </tr>
+        <tr>
+       	  <td><p>Monday – Friday; Lunchtime Sandwich and Drink deal; &pound5.95 until 2.30pm</p></td>
+        </tr>
+      </table>
+    </div>
+
+</div><!-- /page -->
+
+<!-- Thursday page -->
+<div data-role="page" id="thursday" data-theme='a'>
+
+    <div data-role="header">
+        <h1>Thursday Food Deals</h1>
+
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#food" data-transition="fade" data-icon="arrow-l">Return</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div data-role="content">
+      <table width="100%" border="0">
+        <tr>
+          <td><img src="ASSETS/crown.png" width="100%" height="auto" alt=""/></td>
+        </tr>
+        <tr>
+          <td align="center"><strong>Crown & Arrows, Lincoln</strong></td>
+        </tr>
+         <tr>
+          <td><p>Monday to Friday; 2 Meals for &pound8.49 from a selected menu.<br>Monday to Friday; Burger & Pint from &pound4.99<br>Monday to Friday until 5pm; Kids Mega Meal Deal, any small meal, chips & drink from the kids menu, for &pound2.99<br>Monday to Friday until 5pm; Golden Years, for the over 60s, 2 courses for &pound4.49<br>Thursday; Free starter or desert with any big plate special, upgrade to 3 courses for &pound3</p></td>
+        </tr>
+        <tr>
+          <td><img src="ASSETS/centurion.png" width="100%" height="auto" alt=""/></td>
+        </tr>
+        <tr>
+          <td align="center"><strong>Centurion, North Hykeham</strong></td>
+        </tr>
+        <tr>
+        	<td><p>Thursday; Grill Night, 5pm until 10pm from &pound6</p></td>
+        </tr>
+        <tr>
+          <td><img src="ASSETS/duke.jpg" width="100%" height="auto" alt=""/></td>
+        </tr>
+        <tr>
+          <td align="center"><strong>Duke William, Lincoln</strong></td>
+        </tr>
+        <tr>
+        	<td><p>Monday-Friday; Fixed price lunch deal, two courses &pound11.95, three courses &pound14.95 12pm-5pm (Supliment charge for some menu items).<br>Monday-Thursday evenings; Two main courses from their evening menu & a bottle of house wine &pound29</p></td>
+        </tr>
+        <tr>
+          <td><img src="ASSETS/horse.png" width="100%" height="auto" alt=""/></td>
+        </tr>
+        <tr>
+          <td align="center"><strong>Horse & Groom, Lincoln</strong></td>
+        </tr>
+        <tr>
+       	  <td><p>Thursday; Curry Night, a Selection of homemade curries and Sides from &pound9.95</p></td>
+        </tr>
+        <tr>
+          <td><img src="ASSETS/green.jpg" width="100%" height="auto" alt=""/></td>
+        </tr>
+        <tr>
+          <td align="center"><strong>Lincoln Green</strong></td>
+        </tr>
+        <tr>
+       	  <td><p>Weekday Lunchtime Special: Mon-Fri 12-2.30; your choice from 5 lighter lunches for just &pound3.99<br>Kids Eat Free: Anytime Mon-Fri & until 6pm Saturday. One child’s meal per full price adult meal.<br>2 for &pound12 on selected Pub Classics.<br>Thursday: Curry Night &pound4.99.</p></td>
+        </tr>
+        <tr>
+          <td><img src="ASSETS/lion.jpg" width="100%" height="auto" alt=""/></td>
+        </tr>
+        <tr>
+          <td align="center"><strong>Lion & Snake, Lincoln</strong></td>
+        </tr>
+        <tr>
+       	  <td><p>Monday to Friday; Sandwich and a drink from &pound4.95, served until 3:30pm.<br>Monday to Friday; Beer and a burger, free drink with any burger or hot dog.<br>Thursday; Grill Night, free drink with all grills.</p></td>
+        </tr>
+        <tr>
+          <td><img src="ASSETS/magna.jpg" width="100%" height="auto" alt=""/></td>
+        </tr>
+        <tr>
+          <td align="center"><strong>Magna Carta, Lincoln</strong></td>
+        </tr>
+        <tr>
+       	  <td><p>Monday to Friday; 12pm – 5pm Lunch Club: 2 Courses &pound6.99, 3 Courses &pound8.49<br>Thursday; Grill Night</p></td>
+        </tr>
+        <tr>
+          <td><img src="ASSETS/prince.jpg" width="100%" height="auto" alt=""/></td>
+        </tr>
+        <tr>
+          <td align="center"><strong>Prince of Wales, Lincoln</strong></td>
+        </tr>
+        <tr>
+       	  <td><p>Monday – Friday; Lunchtime Sandwich and Drink deal; &pound5.95 until 2.30pm</p></td>
+        </tr>
+      </table>
+    </div>
+
+</div><!-- /page -->
+
+<!-- Friday page -->
+<div data-role="page" id="friday" data-theme='a'>
+
+    <div data-role="header">
+        <h1>Friday Food Deals</h1>
+
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#food" data-transition="fade" data-icon="arrow-l">Return</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div data-role="content">
+      <table width="100%" border="0">
+        <tr>
+          <td><img src="ASSETS/crown.png" width="100%" height="auto" alt=""/></td>
+        </tr>
+        <tr>
+          <td align="center"><strong>Crown & Arrows, Lincoln</strong></td>
+        </tr>
+         <tr>
+          <td><p>Monday to Friday; 2 Meals for &pound8.49 from a selected menu.<br>Monday to Friday; Burger & Pint from &pound4.99<br>Monday to Friday until 5pm; Kids Mega Meal Deal, any small meal, chips & drink from the kids menu, for &pound2.99<br>Monday to Friday until 5pm; Golden Years, for the over 60s, 2 courses for &pound4.49</p></td>
+        </tr>
+        <tr>
+          <td><img src="ASSETS/duke.jpg" width="100%" height="auto" alt=""/></td>
+        </tr>
+        <tr>
+          <td align="center"><strong>Duke William, Lincoln</strong></td>
+        </tr>
+        <tr>
+        	<td><p>Monday-Friday; Fixed price lunch deal, two courses &pound11.95, three courses &pound14.95 12pm-5pm (Supliment charge for some menu items).</p></td>
+        </tr>
+        <tr>
+          <td><img src="ASSETS/green.jpg" width="100%" height="auto" alt=""/></td>
+        </tr>
+        <tr>
+          <td align="center"><strong>Lincoln Green</strong></td>
+        </tr>
+        <tr>
+       	  <td><p>Weekday Lunchtime Special: Mon-Fri 12-2.30; your choice from 5 lighter lunches for just &pound3.99<br>Kids Eat Free: Anytime Mon-Fri & until 6pm Saturday. One child’s meal per full price adult meal.<br>2 for &pound12 on selected Pub Classics.<br>Friday is FRYday: Two hand battered fish and chip meals with bread and butter for &pound9.99</p></td>
+        </tr>
+        <tr>
+          <td><img src="ASSETS/lion.jpg" width="100%" height="auto" alt=""/></td>
+        </tr>
+        <tr>
+          <td align="center"><strong>Lion & Snake, Lincoln</strong></td>
+        </tr>
+        <tr>
+       	  <td><p>Monday to Friday; Sandwich and a drink from &pound4.95, served until 3:30pm.<br>Monday to Friday; Beer and a burger, free drink with any burger or hot dog.</p></td>
+        </tr>
+        <tr>
+          <td><img src="ASSETS/magna.jpg" width="100%" height="auto" alt=""/></td>
+        </tr>
+        <tr>
+          <td align="center"><strong>Magna Carta, Lincoln</strong></td>
+        </tr>
+        <tr>
+       	  <td><p>Monday to Friday; 12pm – 5pm Lunch Club: 2 Courses &pound6.99, 3 Courses &pound8.49<br>Friday; 2 Dine & Wine &pound20</p></td>
+        </tr>
+        <tr>
+          <td><img src="ASSETS/prince.jpg" width="100%" height="auto" alt=""/></td>
+        </tr>
+        <tr>
+          <td align="center"><strong>Prince of Wales, Lincoln</strong></td>
+        </tr>
+        <tr>
+       	  <td><p>Monday – Friday; Lunchtime Sandwich and Drink deal; &pound5.95 until 2.30pm</p></td>
+        </tr>
+      </table>
+    </div>
+
+</div><!-- /page -->
+
+<!-- Saturday page -->
+<div data-role="page" id="saturday" data-theme='a'>
+
+    <div data-role="header">
+        <h1>Saturday Food Deals</h1>
+
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#food" data-transition="fade" data-icon="arrow-l">Return</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div data-role="content">
+      <table width="100%" border="0">
+        <tr>
+          <td><img src="ASSETS/green.jpg" width="100%" height="auto" alt=""/></td>
+        </tr>
+        <tr>
+          <td align="center"><strong>Lincoln Green</strong></td>
+        </tr>
+        <tr>
+       	  <td><p>Kids Eat Free: Anytime Mon-Fri & until 6pm Saturday. One child’s meal per full price adult meal.<br>2 for &pound12 on selected Pub Classics.</p></td>
+        </tr>
+        <tr>
+          <td><img src="ASSETS/slug.png" width="100%" height="auto" alt=""/></td>
+        </tr>
+        <tr>
+          <td align="center"><strong>Slug & Lettuce, Lincoln</strong></td>
+        </tr>
+        <tr>
+       	  <td><p>2 for 1 desserts.</p></td>
+        </tr>
+      </table>
+    </div>
+
+</div><!-- /page -->
+
+<!-- Sunday page -->
+<div data-role="page" id="sunday" data-theme='a'>
+
+    <div data-role="header">
+        <h1>Sunday Food Deals</h1>
+
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#food" data-transition="fade" data-icon="arrow-l">Return</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div data-role="content">
+      <table width="100%" border="0">
+        <tr>
+          <td><img src="ASSETS/crown.png" width="100%" height="auto" alt=""/></td>
+        </tr>
+        <tr>
+          <td align="center"><strong>Crown & Arrows, Lincoln</strong></td>
+        </tr>
+         <tr>
+          <td><p>Sunday; Sunday Roast, 2 for &pound10</p></td>
+        </tr>
+        <tr>
+          <td><img src="ASSETS/centurion.png" width="100%" height="auto" alt=""/></td>
+        </tr>
+        <tr>
+          <td align="center"><strong>Centurion, North Hykeham</strong></td>
+        </tr>
+        <tr>
+        	<td><p>Sunday; Roasts from &pound7.50 served from midday until 10pm</p></td>
+        </tr>
+        <tr>
+          <td><img src="ASSETS/horse.png" width="100%" height="auto" alt=""/></td>
+        </tr>
+        <tr>
+          <td align="center"><strong>Horse & Groom, Lincoln</strong></td>
+        </tr>
+        <tr>
+       	  <td><p>Sunday; A choice of roasts from &pound8.95</p></td>
+        </tr>
+        <tr>
+          <td><img src="ASSETS/green.jpg" width="100%" height="auto" alt=""/></td>
+        </tr>
+        <tr>
+          <td align="center"><strong>Lincoln Green</strong></td>
+        </tr>
+        <tr>
+       	  <td><p>2 for &pound12 on selected Pub Classics.</p></td>
+        </tr>
+        <tr>
+          <td><img src="ASSETS/magna.jpg" width="100%" height="auto" alt=""/></td>
+        </tr>
+        <tr>
+          <td align="center"><strong>Magna Carta, Lincoln</strong></td>
+        </tr>
+        <tr>
+       	  <td><p>Sunday; Roasts with unlimited vegetables</p></td>
+        </tr>
+        <tr>
+          <td><img src="ASSETS/slug.png" width="100%" height="auto" alt=""/></td>
+        </tr>
+        <tr>
+          <td align="center"><strong>Slug & Lettuce, Lincoln</strong></td>
+        </tr>
+        <tr>
+       	  <td><p>Sunday; Kids for a quid, a child (under 8) gets a meal and a drink for &pound1 with every full paying adult.</p></td>
+        </tr>
+      </table>
+    </div>
+
+</div><!-- /page -->
+
+    </body>
+</html>
